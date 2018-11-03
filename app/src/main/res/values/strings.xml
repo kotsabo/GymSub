@@ -10,4 +10,6 @@
     <string name="add">Add</string>
     <string name="erase">Erase</string>
     <string name="my_header_title">My header title</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="settings">Settings</string>
 </resources>
