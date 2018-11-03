@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">GymSub</string>
+    <string name="app_name">GymSubscription</string>
+    <string name="camera">Import</string>
+    <string name="gallery">Gallery</string>
+    <string name="slideshow">Slideshow</string>
+    <string name="tools">Tools</string>
+    <string name="hintName">Name</string>
+    <string name="hintSurname">Surname</string>
+    <string name="months_of_subscription">Months of subscription</string>
+    <string name="add">Add</string>
+    <string name="erase">Erase</string>
+    <string name="my_header_title">My header title</string>
 </resources>
