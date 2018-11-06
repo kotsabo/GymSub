@@ -1,6 +1,5 @@
 package e.kotsabo.gymsub
 
-import android.annotation.SuppressLint
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -15,24 +14,22 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 
-class MainActivity : AppCompatActivity(), NewCustomerFragment.OnFragmentInteractionListener {
+class MainActivity : AppCompatActivity(), NewCustomerFragment.OnFragmentInteractionListener, CustomersListFragment.OnFragmentInteractionListener {
 
     private lateinit var mDrawerLayout: DrawerLayout
     private lateinit var manager: FragmentManager
-    private lateinit var transaction: FragmentTransaction
 
-    @SuppressLint("CommitTransaction")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         this.manager = this.supportFragmentManager
-        // Begin the transaction
 
-        this.transaction = this.manager.beginTransaction()
-        this.transaction.add(R.id.my_placeholder, NewCustomerFragment())
+        // Begin the transaction
+        var transaction: FragmentTransaction = this.manager.beginTransaction()
+        transaction.add(R.id.my_placeholder, NewCustomerFragment())
         // Complete the changes added above
-        this.transaction.commit()
+        transaction.commit()
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
@@ -79,14 +76,20 @@ class MainActivity : AppCompatActivity(), NewCustomerFragment.OnFragmentInteract
                 R.id.nav_insert -> {
                     Log.e("first", "yeah")
                     //val transaction: FragmentTransaction = manager.beginTransaction()
-                    this.transaction = this.manager.beginTransaction()
+                    transaction = this.manager.beginTransaction()
                     // Replace the contents of the container with the new fragment
-                    this.transaction.replace(R.id.my_placeholder, NewCustomerFragment())
+                    transaction.replace(R.id.my_placeholder, NewCustomerFragment())
                     // Complete the changes added above
-                    this.transaction.commit()
+                    transaction.commit()
                 }
                 R.id.nav_subscriptions_list -> {
                     Log.e("second", "yeah")
+                    //val transaction: FragmentTransaction = manager.beginTransaction()
+                    transaction = this.manager.beginTransaction()
+                    // Replace the contents of the container with the new fragment
+                    transaction.replace(R.id.my_placeholder, CustomersListFragment())
+                    // Complete the changes added above
+                    transaction.commit()
                 }
                 R.id.nav_settings -> {
                     Log.e("third", "yeah")
