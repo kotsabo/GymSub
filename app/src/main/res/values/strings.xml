@@ -11,5 +11,10 @@
     <string name="erase">Erase</string>
     <string name="my_header_title">My header title</string>
     <string name="subscriptions">Subscriptions</string>
-    <string name="settings">Settings</string>
+    <string name="insert">Insert New Customer</string>
+    <string name="mysettings">Settings</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
